@@ -1,20 +1,47 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+	Text,
+	SafeAreaView,
+	Image,
+	TouchableOpacity,
+	Button,
+	Alert,
+} from 'react-native';
+import styles from './styles';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+	const handlePress = () => console.log('Text Clicked');
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+	return (
+		<SafeAreaView style={[styles.container, { backgroundColor: 'orange' }]}>
+			<Text numberOfLines={1} onPress={handlePress}>
+				Hello World!
+			</Text>
+			<TouchableOpacity onPress={() => console.log('Image tapped')}>
+				<Image
+					source={{ uri: 'https://picsum.photos/200/300' }}
+					style={styles.image}
+					// blurRadius={10}
+				/>
+			</TouchableOpacity>
+			<Button
+				title='Click Me'
+				color={'navy'}
+				onPress={() =>
+					Alert.alert('My title', 'My message', [
+						{ text: 'Yes', onPress: () => console.log('Yes') },
+						{ text: 'No', onPress: () => console.log('No') },
+					])
+				}
+			/>
+			<Button
+				title='Second button'
+				color='red'
+				onPress={() =>
+					Alert.prompt('Second button', 'You clicked the second button', text =>
+						console.log(text)
+					)
+				}
+			/>
+		</SafeAreaView>
+	);
+}
