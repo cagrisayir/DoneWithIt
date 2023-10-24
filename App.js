@@ -1,8 +1,12 @@
-import { StyleSheet } from 'react-native';
-import ViewImageScreen from './app/screens/ViewImageScreen';
+import { StyleSheet, View } from 'react-native';
+import AppButton from './app/components/AppButton';
 
 export default function App() {
-	return <ViewImageScreen />;
+	return (
+		<View>
+			<AppButton title='Login' onPress={() => console.log('tapped')} />
+		</View>
+	);
 }
 
 const styles = StyleSheet.create({});
