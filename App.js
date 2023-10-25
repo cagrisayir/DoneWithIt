@@ -1,15 +1,12 @@
 import { StyleSheet, View } from 'react-native';
 import React from 'react';
 
-import { AntDesign } from '@expo/vector-icons';
-
-import AppText from './app/components/AppText';
+import AppButton from './app/components/AppButton';
 
 export default function App() {
 	return (
 		<View style={styles.container}>
-			<AppText>I Love React Native!</AppText>
-			<AntDesign name='mail' size={24} color='black' />
+			<AppButton text='Login' handlePress={() => console.log('Tapped')} />
 		</View>
 	);
 }
