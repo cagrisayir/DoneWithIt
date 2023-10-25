@@ -3,6 +3,7 @@ import React from 'react';
 
 import AppText from '../components/AppText';
 import colors from '../config/colors';
+import ListItem from '../components/ListItem';
 
 const ListingDetailsScreen = () => {
 	return (
@@ -11,6 +12,13 @@ const ListingDetailsScreen = () => {
 			<View style={styles.detailsContainer}>
 				<AppText style={styles.title}>Red jacket for sale</AppText>
 				<AppText style={styles.price}>$100</AppText>
+				<View style={styles.userContainer}>
+					<ListItem
+						title='Omer Cagri'
+						subTitle='5 Listing'
+						image={require('../assets/omer.jpeg')}
+					/>
+				</View>
 			</View>
 		</View>
 	);
@@ -31,6 +39,9 @@ const styles = StyleSheet.create({
 	image: {
 		width: '100%',
 		height: 300,
+	},
+	userContainer: {
+		marginVertical: 40,
 	},
 	title: {
 		fontSize: 24,
