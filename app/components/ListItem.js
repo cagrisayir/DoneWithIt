@@ -15,7 +15,7 @@ const ListItem = ({
 	title,
 	subTitle,
 	image,
-	ImageComponent,
+	IconComponent,
 	handlePress,
 	handleRightAction,
 }) => {
@@ -24,7 +24,7 @@ const ListItem = ({
 			<Swipeable renderRightActions={handleRightAction}>
 				<TouchableHighlight underlayColor={colors.light} onPress={handlePress}>
 					<View style={styles.container}>
-						{ImageComponent}
+						{IconComponent}
 						{image && <Image style={styles.image} source={image} />}
 						<View>
 							<Text style={styles.title}>{title}</Text>
@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
 		padding: 15,
 		justifyContent: 'flex-start',
 		alignItems: 'center',
+		backgroundColor: colors.white,
 	},
 
 	image: {
