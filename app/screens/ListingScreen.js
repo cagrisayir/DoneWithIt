@@ -3,6 +3,7 @@ import React from 'react';
 
 import Screen from '../components/Screen';
 import Card from '../components/Card';
+import routes from '../navigation/routes';
 
 const listings = [
 	{
@@ -30,7 +31,7 @@ const ListingScreen = ({ navigation }) => {
 						title={item.title}
 						subTitle={'$' + item.price}
 						image={item.image}
-						onPress={() => navigation.navigate('ListingDetails', item)}
+						onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
 					/>
 				)}
 			/>
@@ -44,5 +45,6 @@ const styles = StyleSheet.create({
 	screen: {
 		padding: 20,
 		backgroundColor: '#f8f4f4',
+		flex: 1,
 	},
 });
