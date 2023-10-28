@@ -65,6 +65,7 @@ export default AccountScreen;
 const styles = StyleSheet.create({
 	container: {
 		marginVertical: 20,
+		backgroundColor: colors.black,
 	},
 	screen: {
 		backgroundColor: colors.light,
